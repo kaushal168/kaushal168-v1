@@ -29,7 +29,7 @@ export const siteConfig = {
   navLinks: [
     { name: "About", url: "/#about" },
     { name: "Experience", url: "/#experience" },
-    { name: "Projects", url: "/#projects" },
+    { name: "Projects", url: "/projects" },
     { name: "Blog", url: "/blog" },
   ],
   socials: [
