@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import { ArrowLeft, Calendar } from "lucide-react";
 import { notFound } from "next/navigation";
+import { Comments } from "@/components/blog/Comments";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -35,10 +36,7 @@ const portableTextComponents = {
 };
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  // Await params for Next.js 15 compatibility
-  const { slug } = await params;
-  
-  // Fetch the post data
+  const { slug } = await params;  
   const post = await client.fetch(postBySlugQuery, { slug });
 
   // If no post is found, trigger the Next.js 404 page
@@ -80,6 +78,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <p className="text-muted-foreground">No content found for this post.</p>
         )}
       </div>
+      <Comments />
     </article>
   );
 }

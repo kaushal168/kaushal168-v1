@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Briefcase, GraduationCap, MapPin } from "lucide-react";
 
 const containerVariants: Variants = {
@@ -92,14 +93,21 @@ export function HeroBento() {
         {/* Call to Action Box */}
         <motion.div
           variants={itemVariants}
-          className="col-span-1 md:col-span-4 rounded-3xl bg-foreground text-background p-8 flex items-center justify-between group cursor-pointer transition-all hover:opacity-90 shadow-md"
+          className="col-span-1 md:col-span-4"
         >
-          <h3 className="text-2xl font-bold">
-            View My Projects
-          </h3>
-          <div className="bg-background text-foreground p-3 rounded-full group-hover:translate-x-2 transition-transform">
-             <ArrowRight className="w-6 h-6" />
-          </div>
+          <Link 
+            href="/projects" 
+            className="rounded-3xl bg-foreground text-background p-8 flex items-center justify-between group transition-all hover:bg-foreground/90 shadow-md block w-full"
+          >
+            <div className="flex items-center justify-between w-full">
+              <h3 className="text-2xl font-bold">
+                View My Projects
+              </h3>
+              <div className="bg-background text-foreground p-3 rounded-full group-hover:translate-x-2 transition-transform">
+                 <ArrowRight className="w-6 h-6" />
+              </div>
+            </div>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

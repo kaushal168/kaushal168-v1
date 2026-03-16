@@ -11,8 +11,12 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const lora = Lora({ subsets: ["latin"], variable: "--font-lora" });
 
 export const metadata: Metadata = {
-  title: "Kaushal Baid | Portfolio",
-  description: "Software Development Engineer I",
+  title: {
+    default: "Kaushal Baid | Software Engineer",
+    template: "%s | Kaushal Baid",
+  },
+  description: "Senior Web Strategist and UI/UX Architect based in Hyderabad, India.",
+  keywords: ["Software Engineer", "React", "Next.js", "Java", "Spring Boot", "Hyderabad"],
 };
 
 export default function RootLayout({

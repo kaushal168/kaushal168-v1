@@ -12,20 +12,20 @@ export function ThemeToggle() {
   // Wait until mounted on client to avoid hydration mismatch on icons
   useEffect(() => setMounted(true), []);
 
-  if (!mounted) return <div className="w-10 h-10 rounded-full bg-neutral-200 dark:bg-neutral-800 animate-pulse" />;
+  if (!mounted) return <div className="w-[42px] h-[42px] rounded-lg bg-muted border border-border animate-pulse shadow-sm" />;
 
   return (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className="p-3 rounded-full bg-neutral-200 dark:bg-neutral-800 hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-500"
+      className="p-2.5 rounded-lg bg-muted text-muted-foreground hover:text-accent hover:bg-muted/80 transition-all border border-border shadow-sm focus:outline-none focus:ring-2 focus:ring-accent/50"
       aria-label="Toggle Dark Mode"
     >
       {resolvedTheme === "dark" ? (
-        <Sun className="w-5 h-5 text-neutral-100" />
+        <Sun className="w-5 h-5" />
       ) : (
-        <Moon className="w-5 h-5 text-neutral-900" />
+        <Moon className="w-5 h-5" />
       )}
     </motion.button>
   );

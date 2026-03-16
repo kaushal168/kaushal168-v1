@@ -6,32 +6,34 @@ import { Briefcase, GraduationCap, Code } from "lucide-react";
 const timelineData = [
   {
     id: 1,
-    year: "2026",
-    title: "Building MealMate & Expanding Horizons",
-    description: "Developing 'MealMate', a full-stack application for couples, while continuously leveling up my system design and algorithmic problem-solving skills.",
-    icon: <Code className="w-5 h-5" />,
-  },
-  {
-    id: 2,
-    year: "2024 - Present",
-    title: "Software Developer — Wells Fargo",
-    description: "Driving backend modernization by migrating enterprise Spring Boot applications from Java 11 to 17, enhancing system performance and maintainability.",
+    year: "Aug 2024 - Present",
+    title: "Software Engineer — Wells Fargo",
+    description: "Modernizing enterprise systems to scalable Java 17 and Spring Boot microservices. Architecting high-throughput event streaming pipelines using Apache Kafka and IBM MQ, deployed on Red Hat OpenShift (Kubernetes).",
     icon: <Briefcase className="w-5 h-5" />,
   },
   {
+    id: 2,
+    year: "May 2023 - July 2023",
+    title: "Intern Analyst — Wells Fargo",
+    description: "Engineered an LSTM neural network in Python to automate customer liquidity forecasting, achieving 95% predictive accuracy and reducing manual ETL processing efforts by 40%.",
+    icon: <Code className="w-5 h-5" />,
+  },
+  {
     id: 3,
-    year: "Graduated",
+    year: "Graduated 2024",
     title: "B.Tech in Computer Science and Engineering",
-    description: "National Institute of Technology (NIT), Durgapur. Built a robust foundation in core computer science principles, data structures, and software engineering.",
+    description: "National Institute of Technology (NIT), Durgapur (CGPA: 8.65). Served as President of the Literary Circle and Vice President of QuizInc, managing 50+ members and large-scale university events.",
     icon: <GraduationCap className="w-5 h-5" />,
   },
 ];
 
 export function Timeline() {
   return (
-    <section className="max-w-4xl mx-auto p-4 md:p-8 py-20 font-heading">
+    <section id="experience" className="max-w-4xl mx-auto p-4 md:p-8 py-20 font-heading">
       <div className="mb-16">
-        <h2 className="text-3xl font-bold mb-4 text-foreground">The Journey</h2>
+        <h2 className="text-3xl font-bold mb-4 text-foreground flex items-center gap-2">
+          <span className="text-accent text-xl">02.</span> The Journey
+        </h2>
         <p className="text-muted-foreground text-lg">
           A timeline of my professional milestones and technical evolution.
         </p>
@@ -45,22 +47,22 @@ export function Timeline() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
-            className="mb-12 ml-10 md:ml-12 relative"
+            className="mb-12 ml-10 md:ml-12 relative group"
           >
             {/* The Node on the line */}
-            <span className="absolute -left-[51px] md:-left-[59px] flex items-center justify-center w-12 h-12 rounded-full bg-background border-2 border-border text-muted-foreground shadow-sm">
+            <span className="absolute -left-[51px] md:-left-[59px] flex items-center justify-center w-12 h-12 rounded-full bg-background border-2 border-border text-muted-foreground shadow-sm group-hover:border-accent group-hover:text-accent transition-colors">
               {item.icon}
             </span>
 
             {/* Content Box */}
-            <div className="flex flex-col gap-2 bg-card p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex flex-col gap-2 bg-card p-6 md:p-8 rounded-2xl border border-border shadow-sm hover:shadow-md hover:border-accent/50 transition-all">
               <span className="text-xs font-bold text-accent tracking-wider uppercase">
                 {item.year}
               </span>
               <h3 className="text-xl font-bold text-card-foreground">
                 {item.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed font-body mt-2">
                 {item.description}
               </p>
             </div>

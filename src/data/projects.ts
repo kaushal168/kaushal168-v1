@@ -1,23 +1,16 @@
 export const projects = [
   {
-    id: "mealmate",
-    title: "MealMate",
-    description: "A full-stack application designed to streamline meal planning and grocery tracking for couples. Built with a focus on responsive design and real-time data synchronization.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    link: "https://github.com/yourusername/mealmate" // Update with your actual repo
+    id: "obstacle-detection",
+    title: "Real-Time Obstacle Detection",
+    description: "An affordable assistive mobile application for the visually impaired. Processes complex spatial data using ARCore to provide low-latency voice feedback loops for near-instantaneous warnings.",
+    tags: ["Kotlin", "Google ARCore", "Android"],
+    link: "https://github.com/kaushal168/Obstacle-Detection"
   },
   {
-    id: "banking-migration",
-    title: "Enterprise Backend Migration",
-    description: "Modernized core banking infrastructure at Wells Fargo by migrating legacy Spring Boot microservices from Java 11 to Java 17, resulting in enhanced system performance and maintainability.",
-    tags: ["Java 17", "Spring Boot", "Microservices"],
-    link: "#" // Use '#' if proprietary/no public link
-  },
-  {
-    id: "portfolio",
-    title: "Portfolio v1",
-    description: "A highly optimized, accessible, and theme-able developer portfolio built with semantic CSS, Framer Motion animations, and a modular architecture.",
-    tags: ["Next.js 15", "Framer Motion", "Tailwind CSS"],
-    link: "https://github.com/yourusername/portfolio" // Update with your actual repo
+    id: "scalable-blog",
+    title: "High-Concurrency Blog Platform",
+    description: "Architected a scalable full-stack platform featuring secure, high-performance RESTful APIs. Implemented robust JWT authentication and Role-Based Access Control (RBAC) architecture.",
+    tags: ["React.js", "Node.js", "Express"],
+    link: "https://github.com/lcnitdgp/darkestwhite2022"
   }
 ];
