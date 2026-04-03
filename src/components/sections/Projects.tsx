@@ -1,65 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
 export function Projects() {
   return (
-    <section className="max-w-6xl mx-auto p-4 md:p-8 py-10 font-heading">
-      <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-          All Projects
-        </h1>
-        <p className="text-muted-foreground text-lg max-w-2xl">
-          A comprehensive list of things I've built, including open-source contributions, enterprise migrations, and full-stack applications.
+    <section className="max-w-5xl mx-auto p-4 md:p-8 py-20 font-heading">
+      <div className="mb-20">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
+          Selected Projects
+        </h2>
+        <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
+          Building intelligent, low-latency systems to solve real-world problems across AI, real-time processing, and scalable platforms.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group flex flex-col justify-between bg-card p-8 rounded-3xl border border-border shadow-sm hover:-translate-y-2 hover:shadow-md hover:border-accent/50 transition-all duration-300"
-          >
-            <div>
-              <div className="flex justify-between items-start mb-6">
-                {/* New Sleek Icon Container */}
-                <div className="p-3 bg-muted rounded-2xl text-accent group-hover:bg-accent/10 transition-colors">
-                  <Code2 className="w-7 h-7" />
-                </div>
-                {project.link !== "#" && (
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-2 text-muted-foreground hover:text-accent transition-colors"
-                    aria-label={`View ${project.title}`}
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-              <h3 className="text-xl font-bold text-card-foreground mb-3 group-hover:text-accent transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-body">
-                {project.description}
-              </p>
-            </div>
+      <div className="flex flex-col border-t border-border">
+        {projects.map((project, index) => {
+          const isEven = index % 2 === 0;
 
-            <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-border/50">
-              {project.tags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-muted text-muted-foreground text-[11px] font-bold uppercase tracking-wider rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+          return (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <a 
+                href={project.link !== "#" ? project.link : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col md:flex-row md:items-center py-10 border-b border-border hover:border-accent transition-colors duration-500 cursor-pointer gap-8 md:gap-12"
+              >
+                <div className={`w-full md:flex-1 flex flex-col order-1 ${isEven ? "md:order-1" : "md:order-2"}`}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 transition-transform duration-500 group-hover:translate-x-2 group-hover:text-accent">
+                    {project.title}
+                  </h3>
+                  
+                  <div className="flex flex-wrap gap-2 transition-transform duration-500 group-hover:translate-x-2 items-center">
+                    {project.tags.map((tag, tagIndex) => (
+                      <div key={tag} className="flex items-center gap-2">
+                        <span className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">
+                          {tag}
+                        </span>
+                        {tagIndex < project.tags.length - 1 && (
+                          <span className="text-muted-foreground/40 text-xs font-bold">•</span>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className={`w-full md:flex-1 order-2 ${isEven ? "md:order-2" : "md:order-1"}`}>
+                  <p className="text-muted-foreground font-body leading-relaxed opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    {project.description}
+                  </p>
+                </div>
+
+                <div className="order-3 flex-shrink-0 w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground transition-all duration-500 group-hover:bg-accent group-hover:text-white group-hover:border-accent group-hover:-translate-y-1 group-hover:translate-x-1 mt-2 md:mt-0 self-end md:self-center">
+                  <ArrowUpRight className="w-5 h-5" />
+                </div>
+              </a>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "market-sentiment-llm",
     title: "Stock Analyst AI Microservice",
-    description: "Serverless AI microservice using Google ADK to transform unstructured financial news into deterministic JSON data. Implemented strict Pydantic schema validation for real-time entity extraction, ticker resolution, and market sentiment analysis for algorithmic trading pipelines.",
+    description: "Serverless AI microservice built with Google ADK to transform raw financial news into structured, actionable JSON. Delivers reliable, real-time entity extraction, ticker resolution, and market sentiment analysis to power algorithmic trading pipelines.",
     tags: ["Python", "Google ADK", "Gemini 2.5", "Cloud Run"],
     link: "https://github.com/kaushal168/market-sentiment-llm"
   },
