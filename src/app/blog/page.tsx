@@ -13,10 +13,10 @@ export default async function BlogPage() {
   return (
     <div className="max-w-4xl mx-auto py-20 font-heading">
       <div className="mb-12">
-        <h1 className="text-4xl font-bold text-foreground mb-4">Writing</h1>
+        <h1 className="text-4xl font-bold text-foreground mb-4">Writings</h1>
         <p className="text-muted-foreground text-lg">
-          Thoughts on software engineering, UI/UX architecture, and building digital products.
-        </p>
+          Thoughts on building products, system design, and UI/UX. I definitely write code faster than I write articles.
+        </p>  
       </div>
 
       <div className="flex flex-col gap-6">
