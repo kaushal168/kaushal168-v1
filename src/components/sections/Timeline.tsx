@@ -32,7 +32,7 @@ export function Timeline() {
     <section id="experience" className="max-w-4xl mx-auto p-4 md:p-8 py-20 font-heading">
       <div className="mb-16">
         <h2 className="text-3xl font-bold mb-4 text-foreground flex items-center gap-2">
-          <span className="text-accent text-xl">02.</span> The Journey
+          The Journey
         </h2>
         <p className="text-muted-foreground text-lg">
           A timeline of my professional milestones and technical evolution.

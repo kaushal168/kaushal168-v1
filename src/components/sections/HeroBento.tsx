@@ -47,7 +47,7 @@ export function HeroBento() {
             Hi, I'm Kaushal Baid.
           </h1>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            A Software Engineer dedicated to building robust backend systems and high-performance digital experiences.
+            Building the scalable, invisible engines that power modern, high-performance applications.
           </p>
         </motion.div>
 
@@ -58,7 +58,7 @@ export function HeroBento() {
           <MapPin className="absolute -right-4 -bottom-4 w-32 h-32 text-background/50" />
           <h2 className="text-xl font-semibold mb-2 relative z-10">Based in Hyderabad, India</h2>
           <p className="text-sm text-muted-foreground relative z-10">
-            Currently engineering enterprise solutions in the banking sector.
+            Deep expertise in the Java ecosystem, driven by a passion for system design and AI integrations.
           </p>
         </motion.div>
 
@@ -85,8 +85,8 @@ export function HeroBento() {
             <GraduationCap className="w-5 h-5 text-foreground" />
           </div>
           <div>
-            <p className="text-sm font-bold text-foreground">NIT Durgapur</p>
-            <p className="text-xs text-muted-foreground">B.Tech, CSE</p>
+            <p className="text-sm font-bold text-foreground">National Institute of Technology, Durgapur</p>
+            <p className="text-xs text-muted-foreground">B.Tech, Computer Science</p>
           </div>
         </motion.div>
 

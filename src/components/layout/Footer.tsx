@@ -31,7 +31,7 @@ export function Footer() {
 
       {/* Copyright */}
       <p className="text-xs text-muted-foreground font-body">
-        Designed & Built by Kaushal Baid &copy; {new Date().getFullYear()}
+        Built with 🧡 by Kaushal Baid &copy; {new Date().getFullYear()}
       </p>
     </footer>
   );
