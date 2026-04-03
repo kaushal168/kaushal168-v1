@@ -31,7 +31,7 @@ export function HeroBento() {
         {/* Main Identity Box */}
         <motion.div
           variants={itemVariants}
-          className="col-span-1 md:col-span-2 md:row-span-2 rounded-3xl bg-card text-card-foreground shadow-sm p-8 flex flex-col justify-end border border-border"
+          className="col-span-1 md:col-span-2 md:row-span-2 rounded-3xl bg-card text-card-foreground shadow-sm p-6 md:p-8 flex flex-col justify-end border border-border"
         >
           <div className="relative w-20 h-20 rounded-full overflow-hidden mb-6 border-2 border-border shadow-md bg-muted">
             <Image 
@@ -43,17 +43,17 @@ export function HeroBento() {
             />
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 text-balance">
             Hi, I'm Kaushal Baid.
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed">
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
             Building the scalable, invisible engines that power modern, high-performance applications.
           </p>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="col-span-1 md:col-span-2 rounded-3xl bg-muted text-card-foreground p-8 border border-border flex flex-col justify-center shadow-sm relative overflow-hidden"
+          className="col-span-1 md:col-span-2 rounded-3xl bg-muted text-card-foreground p-6 md:p-8 border border-border flex flex-col justify-center shadow-sm relative overflow-hidden"
         >
           <MapPin className="absolute -right-4 -bottom-4 w-32 h-32 text-background/50" />
           <h2 className="text-xl font-semibold mb-2 relative z-10">Based in Hyderabad, India</h2>
@@ -97,13 +97,13 @@ export function HeroBento() {
         >
           <Link 
             href="/projects" 
-            className="rounded-3xl bg-foreground text-background p-8 flex items-center justify-between group transition-all hover:bg-foreground/90 shadow-md block w-full"
+            className="rounded-3xl bg-foreground text-background p-6 md:p-8 flex items-center justify-between group transition-all hover:bg-foreground/90 shadow-md block w-full"
           >
-            <div className="flex items-center justify-between w-full">
-              <h3 className="text-2xl font-bold">
+            <div className="flex items-center justify-between w-full gap-4">
+              <h3 className="text-xl md:text-2xl font-bold text-balance">
                 View My Projects
               </h3>
-              <div className="bg-background text-foreground p-3 rounded-full group-hover:translate-x-2 transition-transform">
+              <div className="bg-background text-foreground p-3 rounded-full group-hover:translate-x-2 transition-transform shrink-0">
                  <ArrowRight className="w-6 h-6" />
               </div>
             </div>

@@ -9,7 +9,7 @@ export function Projects() {
     <section className="max-w-5xl mx-auto p-4 md:p-8 py-20 font-heading">
       <div className="mb-20">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground tracking-tight">
-          Selected Projects
+          Projects
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed">
           Building intelligent, low-latency systems to solve real-world problems across AI, real-time processing, and scalable platforms.
