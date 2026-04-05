@@ -1,4 +1,4 @@
-name: Cleanup Old Vercel Deployments
+name: Cleanup Old Deployments
 
 on:
   push:
@@ -8,26 +8,49 @@ on:
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write 
     steps:
-      - name: Keep only the 5 most recent deployments
+      - name: Keep only the 5 most recent deployments on Vercel
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
         run: |
           echo "Fetching Vercel deployments..."
-          
           RESPONSE=$(curl -s -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v6/deployments?projectId=$VERCEL_PROJECT_ID&target=production")
           
           IDS_TO_DELETE=$(echo $RESPONSE | jq -r '.deployments | sort_by(.createdAt) | reverse | .[5:] | .[].uid')
           
           if [ -z "$IDS_TO_DELETE" ]; then
-            echo "No old deployments to delete. You have 5 or fewer."
+            echo "No old Vercel deployments to delete."
+          else
+            for id in $IDS_TO_DELETE; do
+              echo "Deleting Vercel deployment ID: $id..."
+              curl -s -X DELETE -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v13/deployments/$id"
+            done
+          fi
+
+      - name: Cleanup old GitHub Deployments
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Fetching GitHub deployments..."
+          
+          DEPLOYMENTS=$(gh api -X GET /repos/${{ github.repository }}/deployments -F per_page=100)
+          
+          IDS_TO_DELETE=$(echo "$DEPLOYMENTS" | jq -r 'sort_by(.created_at) | reverse | .[5:] | .[].id')
+          
+          if [ -z "$IDS_TO_DELETE" ]; then
+            echo "No old GitHub deployments to delete."
             exit 0
           fi
 
           for id in $IDS_TO_DELETE; do
-            echo "Deleting deployment ID: $id..."
-            curl -s -X DELETE -H "Authorization: Bearer $VERCEL_TOKEN" "https://api.vercel.com/v13/deployments/$id"
+            echo "Marking deployment $id as inactive..."
+            gh api -X POST /repos/${{ github.repository }}/deployments/$id/statuses -f state=inactive
+            
+            echo "Deleting deployment $id from GitHub..."
+            gh api -X DELETE /repos/${{ github.repository }}/deployments/$id
           done
           
-          echo "Cleanup complete!"
+          echo "GitHub deployment cleanup complete!"
