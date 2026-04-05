@@ -1,5 +1,12 @@
 export const projects = [
   {
+    id: "job-hunter-ai",
+    title: "Autonomous AI Job Search Automation Pipeline",
+    description: "Serverless CI/CD pipeline built with GitHub Actions to autonomously scrape job boards and evaluate semantic role alignment using LLMs. Dynamically compiles tailored LaTeX resumes via headless Tectonic and delivers ATS-optimized PDFs via secure SMTP.",
+    tags: ["Python", "GitHub Actions", "LaTeX", "SMTP"],
+    link: "https://github.com/kaushal168/job-hunter-ai"
+  },
+  {
     id: "market-sentiment-llm",
     title: "Stock Analyst AI Microservice",
     description: "Serverless AI microservice built with Google ADK to transform raw financial news into structured, actionable JSON. Delivers reliable, real-time entity extraction, ticker resolution, and market sentiment analysis to power algorithmic trading pipelines.",
