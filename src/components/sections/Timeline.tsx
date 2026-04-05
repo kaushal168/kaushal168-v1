@@ -1,30 +1,58 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Briefcase, GraduationCap, Code } from "lucide-react";
+import { Bot, Landmark, GraduationCap, Users, Code } from "lucide-react";
 import { useRef } from "react";
 
 const timelineData = [
   {
     id: 1,
-    year: "Aug 2024 - Present",
-    title: "Software Engineer — Wells Fargo",
-    description: "Modernizing enterprise systems to scalable Java 17 and Spring Boot microservices. Architecting high-throughput event streaming pipelines using Apache Kafka and IBM MQ, deployed on Red Hat OpenShift (Kubernetes).",
-    icon: <Briefcase className="w-5 h-5" />,
+    year: "2026 — Expanding into AI & Agentic Workflows",
+    title: "Building Context-Aware Systems",
+    description: [
+      "Designing automated microservices and agent-driven workflows.",
+      "Earned the Model Context Protocol (MCP): Advanced Topics credential from Anthropic and actively engineering practical tools, including an automated AI-powered job search pipeline and serverless market sentiment APIs."
+    ],
+    icon: <Bot className="w-5 h-5" />,
   },
   {
     id: 2,
-    year: "May 2023 - July 2023",
-    title: "Intern Analyst — Wells Fargo",
-    description: "Engineered an LSTM neural network in Python to automate customer liquidity forecasting, achieving 95% predictive accuracy and reducing manual ETL processing efforts by 40%.",
-    icon: <Code className="w-5 h-5" />,
+    year: "August 2024 to Present — Engineering at Scale",
+    title: "Software Engineer — Wells Fargo",
+    description: [
+      "Developing resilient, high-throughput backend systems to handle large-scale data.",
+      "My core work involves modernizing legacy enterprise applications into Java 17 and Spring Boot microservices, alongside building highly available event streaming pipelines using Apache Kafka, IBM MQ, and Kubernetes."
+    ],
+    icon: <Landmark className="w-5 h-5" />,
   },
   {
     id: 3,
-    year: "Graduated 2024",
-    title: "B.Tech in Computer Science and Engineering",
-    description: "National Institute of Technology (NIT), Durgapur (CGPA: 8.65). Served as President of the Literary Circle and Vice President of QuizInc, managing 50+ members and large-scale university events.",
+    year: "May 2024 — Academic Milestone",
+    title: "Graduated. B.Tech in Computer Science and Engineering",
+    description: [
+      "National Institute of Technology (NIT), Durgapur (CGPA: 8.65)."
+    ],
     icon: <GraduationCap className="w-5 h-5" />,
+  },
+  {
+    id: 4,
+    year: "August 2023 to April 2024 — Campus Leadership",
+    title: "President of Literary Circle & Vice President of QuizInc",
+    description: [
+      "Spearheaded TEDx and the university's largest literary festival.",
+      "Managed cross-functional teams of 50+ members, organized large-scale university events, and directed content strategy for numerous competitive quizzes and other events."
+    ],
+    icon: <Users className="w-5 h-5" />,
+  },
+  {
+    id: 5,
+    year: "May 2023 to July 2023 — First Industry Experience",
+    title: "Intern Analyst — Wells Fargo",
+    description: [
+      "Developed a Long Short-Term Memory (LSTM) neural network in Python to automate customer liquidity forecasting.",
+      "Achieved 95% predictive accuracy and reduced manual data processing efforts by 40%."
+    ],
+    icon: <Code className="w-5 h-5" />,
   },
 ];
 
@@ -92,9 +120,14 @@ export function Timeline() {
                 <h3 className="text-xl font-bold text-slate-900 dark:text-card-foreground mt-1">
                   {item.title}
                 </h3>
-                <p className="text-slate-600 dark:text-muted-foreground leading-relaxed font-body mt-2 transition-colors">
-                  {item.description}
-                </p>
+                
+                <div className="mt-3 flex flex-col gap-3">
+                  {item.description.map((sentence, i) => (
+                    <p key={i} className="text-slate-600 dark:text-muted-foreground leading-relaxed font-body transition-colors">
+                      {sentence}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
