@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Bot, Landmark, GraduationCap, Users, Code } from "lucide-react";
+import { Bot, Landmark, GraduationCap, Users, Code, School } from "lucide-react";
 import { useRef } from "react";
 
 const timelineData = [
@@ -21,7 +21,7 @@ const timelineData = [
     title: "Software Engineer — Wells Fargo",
     description: [
       "Developing resilient, high-throughput backend systems to handle large-scale data.",
-      "My core work involves modernizing legacy enterprise applications into Java 17 and Spring Boot microservices, alongside building highly available event streaming pipelines using Apache Kafka, IBM MQ, and Kubernetes."
+      "My core work involves modernizing legacy enterprise applications into Java 17 and Spring Boot cloud-native microservices, alongside building highly available event streaming pipelines using Apache Kafka, IBM MQ, and Kubernetes."
     ],
     icon: <Landmark className="w-5 h-5" />,
   },
@@ -53,6 +53,16 @@ const timelineData = [
       "Achieved 95% predictive accuracy and reduced manual data processing efforts by 40%."
     ],
     icon: <Code className="w-5 h-5" />,
+  },
+  {
+    id: 6,
+    year: "2020 — The Beginning",
+    title: "Started B.Tech in Computer Science",
+    description: [
+      "Began my undergraduate journey at the National Institute of Technology (NIT), Durgapur.",
+      "Cultivated a first-principles approach to software design, focusing heavily on algorithms, data structures, and low-level architecture."
+    ],
+    icon: <School className="w-5 h-5" />,
   },
 ];
 
