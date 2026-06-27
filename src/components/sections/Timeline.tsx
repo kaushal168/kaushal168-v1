@@ -10,8 +10,8 @@ const timelineData = [
     year: "2026 — Expanding into AI & Agentic Workflows",
     title: "Building Context-Aware Systems",
     description: [
-      "Designing automated microservices and agent-driven workflows.",
-      "Earned the Model Context Protocol (MCP): Advanced Topics credential from Anthropic and actively engineering practical tools, including an automated AI-powered job search pipeline and serverless market sentiment APIs."
+      "Designing automated microservices, agent-driven workflows, and exploring LLM optimization.",
+      "Earned credentials in Generative AI with LLMs (DeepLearning.AI & AWS) and Advanced Model Context Protocol (Anthropic). Actively engineering practical tools, including an automated AI-powered job search pipeline and serverless market sentiment APIs."
     ],
     icon: <Bot className="w-5 h-5" />,
   },
@@ -21,7 +21,8 @@ const timelineData = [
     title: "Software Engineer — Wells Fargo",
     description: [
       "Developing resilient, high-throughput backend systems to handle large-scale data.",
-      "My core work involves modernizing legacy enterprise applications into Java 17 and Spring Boot cloud-native microservices, alongside building highly available event streaming pipelines using Apache Kafka, IBM MQ, and Kubernetes."
+      "My core work involves modernizing legacy enterprise applications into Java 17 and Spring Boot cloud-native microservices, alongside building highly available event streaming pipelines using Apache Kafka and IBM MQ.",
+      "I also automate complex operational workflows using Kubernetes batch jobs orchestrated via Autosys, eliminating manual toil and ensuring 99.9% system reliability."
     ],
     icon: <Landmark className="w-5 h-5" />,
   },
