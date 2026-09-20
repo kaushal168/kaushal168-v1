@@ -1,38 +1,42 @@
 "use client";
 
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Bot, Landmark, GraduationCap, Users, Code, School } from "lucide-react";
+import { Bot, Server, GraduationCap, Users, Code, Trophy } from "lucide-react";
 import { useRef } from "react";
 
 const timelineData = [
   {
     id: 1,
-    year: "2026 — Expanding into AI & Agentic Workflows",
-    title: "Building Context-Aware Systems",
+    year: "2026 — Autonomous Systems & Agentic Architecture",
+    title: "Building Context-Aware AI Systems",
     description: [
-      "Designing automated microservices, agent-driven workflows, and exploring LLM optimization.",
-      "Earned credentials in Generative AI with LLMs (DeepLearning.AI & AWS) and Advanced Model Context Protocol (Anthropic). Actively engineering practical tools, including an automated AI-powered job search pipeline and serverless market sentiment APIs."
+      "Architecting a multi-agent VS Code development environment that autonomously translates Jira user stories into production-ready code.",
+      "The workflow orchestrates four specialized LLM sub-agents via markdown handoffs to manage end-to-end implementation blueprinting, code generation, and rigorous auditing against initial requirements.",
+      "Earned advanced credentials in Generative AI (DeepLearning.AI) and Model Context Protocol (Anthropic)."
     ],
+    tags: ["Agentic AI", "Prompt Engineering", "Python"],
     icon: <Bot className="w-5 h-5" />,
   },
   {
     id: 2,
-    year: "August 2024 to Present — Engineering at Scale",
+    year: "August 2024 to Present — Backend Engineering & Release Leadership",
     title: "Software Engineer — Wells Fargo",
     description: [
-      "Developing resilient, high-throughput backend systems to handle large-scale data.",
-      "My core work involves modernizing legacy enterprise applications into Java 17 and Spring Boot cloud-native microservices, alongside building highly available event streaming pipelines using Apache Kafka and IBM MQ.",
-      "I also automate complex operational workflows using Kubernetes batch jobs orchestrated via Autosys, eliminating manual toil and ensuring 99.9% system reliability."
+      "Modernizing the Commercial Cards domain into scalable Java 17 and Spring Boot microservices, alongside high-throughput event streaming via Apache Kafka and IBM MQ.",
+      "Engineered custom GitHub Copilot sub-agents to generate UI test case workflows, ensuring production resiliency.",
+      "Lead end-to-end production deployments, coordinating cross-functional rollouts and ensuring zero-downtime releases on OpenShift."
     ],
-    icon: <Landmark className="w-5 h-5" />,
+    tags: ["Java 17", "Spring Boot", "Apache Kafka", "OpenShift", "Kubernetes", "Copilot"],
+    icon: <Server className="w-5 h-5" />,
   },
   {
     id: 3,
     year: "May 2024 — Academic Milestone",
-    title: "Graduated. B.Tech in Computer Science and Engineering",
+    title: "Graduated. B.Tech in Computer Science",
     description: [
       "National Institute of Technology (NIT), Durgapur (CGPA: 8.65)."
     ],
+    tags: ["Computer Science", "Engineering"],
     icon: <GraduationCap className="w-5 h-5" />,
   },
   {
@@ -40,9 +44,10 @@ const timelineData = [
     year: "August 2023 to April 2024 — Campus Leadership",
     title: "President of Literary Circle & Vice President of QuizInc",
     description: [
-      "Spearheaded TEDx and the university's largest literary festival.",
-      "Managed cross-functional teams of 50+ members, organized large-scale university events, and directed content strategy for numerous competitive quizzes and other events."
+      "Spearheaded TEDx and the university's largest literary festival, leading a cross-functional team of 50+ members.",
+      "Directed content strategy and logistics for numerous competitive quizzes and large-scale university events."
     ],
+    tags: ["Leadership", "Event Management", "Strategy"],
     icon: <Users className="w-5 h-5" />,
   },
   {
@@ -50,20 +55,22 @@ const timelineData = [
     year: "May 2023 to July 2023 — First Industry Experience",
     title: "Intern Analyst — Wells Fargo",
     description: [
-      "Developed a Long Short-Term Memory (LSTM) neural network in Python to automate customer liquidity forecasting.",
-      "Achieved 95% predictive accuracy and reduced manual data processing efforts by 40%."
+      "Engineered a Long Short-Term Memory (LSTM) neural network in Python to automate customer liquidity forecasting.",
+      "Delivered 95% predictive accuracy across millions of records, reducing manual ETL processing efforts by 40%."
     ],
+    tags: ["Python", "LSTM", "Machine Learning", "ETL"],
     icon: <Code className="w-5 h-5" />,
   },
   {
     id: 6,
-    year: "2020 — The Beginning",
-    title: "Started B.Tech in Computer Science",
+    year: "2020 — Foundations & Competitive Programming",
+    title: "The Engineering Genesis",
     description: [
-      "Began my undergraduate journey at the National Institute of Technology (NIT), Durgapur.",
-      "Cultivated a first-principles approach to software design, focusing heavily on algorithms, data structures, and low-level architecture."
+      "Began my undergraduate journey with a rigorous focus on first-principles software design, algorithms, data structures, and low-level architecture.",
+      "Started competitive programming and actively participated in contests on platforms like CodeChef and Codeforces to build strong algorithmic foundations."
     ],
-    icon: <School className="w-5 h-5" />,
+    tags: ["Competitive Programming", "Data Structures", "Algorithms", "C++"],
+    icon: <Trophy className="w-5 h-5" />,
   },
 ];
 
@@ -76,8 +83,8 @@ export function Timeline() {
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 50,  // Lower stiffness makes it follow more lazily
-    damping: 20,    // Higher damping prevents it from bouncing
+    stiffness: 50,
+    damping: 20,
     restDelta: 0.001
   });
 
@@ -139,6 +146,19 @@ export function Timeline() {
                     </p>
                   ))}
                 </div>
+
+                {item.tags && (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {item.tags.map((tag, i) => (
+                      <span 
+                        key={i} 
+                        className="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-100 text-slate-600 dark:bg-accent/10 dark:text-accent border border-slate-200 dark:border-accent/20 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
