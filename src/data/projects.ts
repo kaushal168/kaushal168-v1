@@ -1,5 +1,12 @@
 export const projects = [
   {
+    id: "cinefind",
+    title: "CineFind — Multi-Region OTT Stream Finder",
+    description: "Full-stack streaming availability engine for Letterboxd lists, watchlists, and diaries. Features high-throughput batch reconciliation with TMDB/JustWatch, composite regional caching with Turso SQLite at the edge, cross-tab synchronization, and Upstash Redis rate-limiting.",
+    tags: ["Next.js", "TypeScript", "Turso (SQLite)", "Upstash Redis", "Cheerio"],
+    link: "https://cinefind-ott.vercel.app/"
+  },
+  {
     id: "job-hunter-ai",
     title: "Autonomous AI Job Search Automation Pipeline",
     description: "Serverless CI/CD pipeline built with GitHub Actions to autonomously scrape job boards and evaluate semantic role alignment using LLMs. Dynamically compiles tailored LaTeX resumes via headless Tectonic and delivers ATS-optimized PDFs via secure SMTP.",
