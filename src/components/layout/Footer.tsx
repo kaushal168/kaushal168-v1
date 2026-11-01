@@ -1,6 +1,7 @@
 "use client";
 
 import { siteConfig } from "@/data/config";
+import { ViewCounter } from "@/components/ui/ViewCounter";
 
 export function Footer() {
   return (
@@ -29,10 +30,14 @@ export function Footer() {
         {siteConfig.email}
       </a>
 
-      {/* Copyright */}
-      <p className="text-xs text-muted-foreground font-body">
-        Built with 🧡 by Kaushal Baid &copy; {new Date().getFullYear()}
-      </p>
+      {/* Bottom Row: Copyright + View Counter */}
+      <div className="flex flex-wrap items-center justify-center gap-4">
+        <p className="text-xs text-muted-foreground font-body">
+          Built with 🧡 by Kaushal Baid &copy; {new Date().getFullYear()}
+        </p>
+        
+        <ViewCounter />
+      </div>
     </footer>
   );
 }
